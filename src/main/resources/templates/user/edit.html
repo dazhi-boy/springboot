@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>添加用户</title>
+</head>
+<body>
+<h2>添加用户</h2>
+<div>
+    <form action="/user/edit" method="post">
+        <p hidden="hidden">id: <input type="text" name="id" th:value="${user.id}"/></p>
+        <p>name: <input type="text" name="name" th:value="${user.name}"/></p>
+        <p>userName: <input type="text" name="username" th:value="${user.username}"/></p>
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+</body>
+</html>

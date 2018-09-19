@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Insert title here</title>
+</head>
+<body>
+<h2>用户列表</h2>
+<a href="/user/insertPage">添加</a>
+<div>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>password</th>
+            <th>salt</th>
+            <th>state</th>
+            <th>username</th>
+            <th>operation</th>
+        </tr>
+        <tr  th:each="user:${users}">
+            <td th:text="${user.id}"></td>-
+            <td th:text="${user.name}"></td>-
+            <td th:text="${user.password}"></td>-
+            <td th:text="${user.salt}"></td>
+            <td th:text="${user.state}"></td>
+            <td th:text="${user.username}"></td>
+            <td>
+                <a th:href="@{'/user/delete/'+${user.id}}">删除</a>
+                <a th:href="@{'/user/editPage/'+${user.id}}">编辑</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
